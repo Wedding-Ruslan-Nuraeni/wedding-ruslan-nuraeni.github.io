@@ -97,7 +97,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
         }
         
-        /* FIX PARALLAX HALUS PADA FOTO PROFIL MEMPELAI */
         .parallax-wrap {
             width: 190px;
             height: 190px;
@@ -110,7 +109,7 @@
         }
         .parallax-img {
             width: 100%;
-            height: 115%; /* Sedikit lebih tinggi untuk rentang gerak mikro */
+            height: 115%; 
             object-fit: cover;
             position: absolute;
             top: -7%; 
@@ -190,13 +189,16 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
+        /* PENINGKATAN BINGKAI DAN KUALITAS KONTRAST VIDEO */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background-color: #000000;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            border: 2px solid rgba(255,255,255,0.8);
         }
         .video-container iframe {
             position: absolute;
@@ -271,7 +273,7 @@
             <h3 class="fw-bold mb-4" style="font-size: 1.3rem; letter-spacing: 2px; color: #c5a880;">QS. AR-RUM: 21</h3>
             
             <p class="arabic-text my-4 px-3 text-center">
-                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ Lآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
             </p>
             
             <hr class="mx-auto my-4" style="width: 80px; border-top: 2px solid #d4af37;">
@@ -282,7 +284,7 @@
         </div>
     </section>
 
-    <!-- 2. Profil Mempelai (DENGAN REVISI PARALLAX MIKRO SUPER HALUS) -->
+    <!-- 2. Profil Mempelai -->
     <section class="section-padding text-center container" id="mempelai">
         <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="romantic-font mb-5" style="font-size: 3.5rem;">Mempelai Bersanding</h2>
@@ -331,57 +333,57 @@
         </div>
     </section>
 
-    <!-- REVISI: HALAMAN GALERI KILAS BALIK DENGAN LINK DRIVE ANDA -->
+    <!-- PEMBARUAN PENINGKATAN RESOLUSI VIDEO (FUNGSI STABILISASI KUALITAS HD) -->
     <section class="section-padding text-center container">
         <div class="glass-panel mx-auto" style="max-width: 850px;" data-aos="fade-up">
             <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Kilas Balik Video</h2>
             <p class="text-muted mb-4">Simak rangkuman momen sinematik kebersamaan hari bahagia kami</p>
             <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/1v6iq-1AHEBVfsvyEUxOGw3b4AhHLiWld/preview" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- Disematkan kode pemaksa render HD 1080p (?vq=hd1080) -->
+                <iframe src="https://drive.google.com/file/d/1v6iq-1AHEBVfsvyEUxOGw3b4AhHLiWld/preview?vq=hd1080" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- 3. Kisah Cinta (REVISI NARASI & TAHUN ROMANTIS) -->
-    <section class="section-padding container" id="cerita">
-        <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
-            <div class="text-center mb-5">
-                <h2 class="romantic-font" style="font-size: 3.5rem;">Kisah Cinta Kami</h2>
-                <p class="text-muted">Setiap detik berharga, mengantarkan kami menuju gerbang pelaminan</p>
-            </div>
+    <!-- 3. Kisah Cinta -->
+     <section class="section-padding container" id="cerita">
+        <div class="glass-panel mx-auto" style="max-width: 950px;">
+            <h2 class="romantic-font text-center mb-5">Perjalanan Cinta Kami</h2>
             <div class="timeline">
-                <div class="timeline-container left" data-aos="fade-right">
-                    <div class="timeline-content">
-                        <img src="https://lh3.googleusercontent.com/u/0/d/1_BWBy6LvbA44jllcs7bqaLdP3-vrWuSv" class="timeline-gallery-img" alt="Pertama Bertemu">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Awal Pertemuan (2021)</h4>
-                        <p class="mb-0 text-muted small">Takdir tulus mempertemukan tatapan kami untuk pertama kali. Diskusi hangat dan kecocokan hati menjadi benih awal dari rasa kagum yang tumbuh perlahan.</p>
-                    </div>
-                </div>
-                <div class="timeline-container right" data-aos="fade-left">
-                    <div class="timeline-content">
-                        <img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="timeline-gallery-img" alt="Menjalin Komitmen">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Menjalin Komitmen (2022)</h4>
-                        <p class="mb-0 text-muted small">Kami memantapkan hati memilih satu sama lain. Sebuah ikatan komitmen tulus diikrarkan untuk saling menjaga, melengkapi, dan meraih impian bersama.</p>
-                    </div>
-                </div>
-                <div class="timeline-container left" data-aos="fade-right">
-                    <div class="timeline-content">
-                        <img src="https://lh3.googleusercontent.com/u/0/d/1iNdTKBzkdgmp7VJD64SkSFduQyZWP_Hs" class="timeline-gallery-img" alt="Hari Lamaran">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Ikatan Lamaran (2025)</h4>
-                        <p class="mb-0 text-muted small">Di hadapan restu kedua keluarga besar, kami menyatukan niat suci dalam prosesi lamaran yang khidmat penuh haru serta untaian kebahagiaan mendalam.</p>
-                    </div>
-                </div>
-                <div class="timeline-container right" data-aos="fade-left">
-                    <div class="timeline-content">
-                        <img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="timeline-gallery-img" alt="Menikah">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Gerbang Pernikahan (2026)</h4>
-                        <p class="mb-0 text-muted small">Lembaran ibadah terindah dan pengabdian hidup baru dimulai. Kami mengikrarkan janji setia sehidup sesurga dalam ikatan akad pernikahan suci.</p>
-                    </div>
-                </div>
+                <!-- 2021 -->
+                <div class="timeline-container left"><div class="timeline-content">
+                    <h4 class="h6 fw-bold text-warning">Awal Pertemuan (2021)</h4>
+                    <p class="small">Tahun di mana semesta merancang pertemuan pertama kita, awal dari segala rasa yang tak pernah terduga.</p>
+                </div></div>
+                <!-- 2022 -->
+                <div class="timeline-container right"><div class="timeline-content">
+                    <h4 class="h6 fw-bold text-warning">Menjalin Komitmen (2022)</h4>
+                    <p class="small">Kita memutuskan untuk melangkah beriringan, membangun keyakinan dalam satu ikatan hati yang penuh harapan.</p>
+                </div></div>
+                <!-- 2023 -->
+                <div class="timeline-container left"><div class="timeline-content">
+                    <h4 class="h6 fw-bold text-warning">Tumbuh Bersama (2023)</h4>
+                    <p class="small">Melewati berbagai hari bersama, saling menguatkan dalam tawa maupun air mata, mempererat rasa yang semakin bermakna.</p>
+                </div></div>
+                <!-- 2024 -->
+                <div class="timeline-container right"><div class="timeline-content">
+                    <h4 class="h6 fw-bold text-warning">Saling Menguatkan (2024)</h4>
+                    <p class="small">Setiap rintangan kita lalui berdua, keyakinan untuk terus bersama semakin kokoh meski dunia terus berubah.</p>
+                </div></div>
+                <!-- 2025 -->
+                <div class="timeline-container left"><div class="timeline-content">
+                    <h4 class="h6 fw-bold text-warning">Ikatan Lamaran (2025)</h4>
+                    <p class="small">Langkah serius dimulai saat kita mengikat janji di hadapan keluarga, tanda bahwa hati telah mantap memilih satu sama lain selamanya.</p>
+                </div></div>
+                <!-- 2026 -->
+                <div class="timeline-container right"><div class="timeline-content">
+                    <h4 class="h6 fw-bold text-warning">Gerbang Pernikahan (2026)</h4>
+                    <p class="small">Inilah puncak perjalanan kita, menyatukan dua jiwa menjadi satu dalam ibadah suci pernikahan yang diridhoi-Nya.</p>
+                </div></div>
             </div>
         </div>
-    </section>
-
+     </section>
+    
     <!-- 4. Detail Acara & Peta -->
     <section class="section-padding text-center container" id="acara">
         <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
@@ -393,7 +395,7 @@
                         <h4 style="font-weight: 600;">Akad Nikah</h4>
                         <p class="mt-2 mb-1"><strong>Minggu, 26 Desember 2026</strong></p>
                         <p class="mb-2">Pukul 08.00 - 10.00 WIB</p>
-                        <p class="text-muted small">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
+                        <p class="text-muted small">Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="zoom-in-left" data-aos-duration="1000">
@@ -402,7 +404,7 @@
                         <h4 style="font-weight: 600;">Resepsi Pernikahan</h4>
                         <p class="mt-2 mb-1"><strong>Minggu, 26 Desember 2026</strong></p>
                         <p class="mb-2">Pukul 11.00 - selesai</p>
-                        <p class="text-muted small">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
+                        <p class="text-muted small">Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
                     </div>
                 </div>
             </div>
@@ -489,11 +491,11 @@
 
             <div class="guestbook-list" id="wishes-container">
                 <div class="guestbook-card">
-                    <h6 class="fw-bold mb-1" style="color: #c5a880;">Keluarga Besar Budi Santoso</h6>
+                    <h6 class="fw-bold mb-1" style="color: #c5a880;">Keluarga Besar Ma Nyai</h6>
                     <p class="small text-muted mb-0">Selamat menempuh hidup baru Ruslan & Nuraeni! Semoga menjadi keluarga yang sakinah, mawadah, dan warahmah. Amin.</p>
                 </div>
                 <div class="guestbook-card">
-                    <h6 class="fw-bold mb-1" style="color: #c5a880;">Siti Rahma</h6>
+                    <h6 class="fw-bold mb-1" style="color: #c5a880;">Rekan</h6>
                     <p class="small text-muted mb-0">Happy Wedding ya! Lancar terus acaranya sampai hari H, ikut bahagia melihat perjalanan cinta kalian berdua.</p>
                 </div>
             </div>
@@ -583,7 +585,7 @@
             }, interval);
         }
 
-        // PARALLAX SCROLLING PADA FOTO PROFIL MEMPELAI (DIPELAN MENJADI 0.08)
+        // PARALLAX SCROLLING PADA FOTO PROFIL MEMPELAI
         window.addEventListener('scroll', function() {
             const speed = 0.08; 
             const imgPria = document.getElementById('img-mempelai-pria');
@@ -592,7 +594,6 @@
             if(imgPria && imgWanita) {
                 const parentPria = imgPria.parentElement.getBoundingClientRect();
                 if(parentPria.top < window.innerHeight && parentPria.bottom > 0) {
-                    // Geser koordinat gambar secara vertikal dengan perlahan agar seimbang
                     let yOffset = (window.innerHeight - parentPria.top) * speed - 20;
                     imgPria.style.transform = `translateY(${yOffset}px)`;
                     imgWanita.style.transform = `translateY(${yOffset}px)`;
