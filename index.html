@@ -69,7 +69,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
         }
         
-        /* GAYA TIMELINE KISAH CINTA ELEGAN */
+        /* GAYA TIMELINE KISAH CINTA ELEGAN DENGAN ALBUM GALERI */
         .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 20px 0; }
         .timeline::after { content: ''; position: absolute; width: 2px; background-color: #d4af37; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
         .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
@@ -78,11 +78,23 @@
         .right { left: 50%; text-align: left; }
         .left::after { right: -8px; }
         .right::after { left: -8px; }
+        .timeline-content { padding: 20px; background-color: rgba(255, 255, 255, 0.9); position: relative; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .timeline-content:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .timeline-gallery-img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; border: 2px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         
         /* ALBUM FOTO PREWEDDING EFEK HOVER ZOOM PENGANTIN */
         .gallery-img { width: 100%; height: 260px; object-fit: cover; transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
         .gallery-box { overflow: hidden; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 3px solid rgba(255, 255, 255, 0.8); }
         .gallery-box:hover .gallery-img { transform: scale(1.08); }
+
+        /* KELOPAK BUNGA JATUH ANIMASI CSS */
+        .petals-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99; overflow: hidden; }
+        .petal { position: absolute; background: #f8c8d8; border-radius: 150% 0 150% 150%; opacity: 0.6; animation: floatPetal linear infinite; }
+        @keyframes floatPetal {
+            0% { transform: translateY(-10px) translateX(0) rotate(0deg); opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(105vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
 
         @media screen and (max-width: 600px) {
             .timeline::after { left: 31px; }
@@ -90,12 +102,16 @@
             .timeline-container::after { left: 23px; }
             .right { left: 0%; }
             .left { left: 0%; }
+            .left .timeline-content { text-align: left; }
             .romantic-font { font-size: 3.8rem; }
             .arabic-font { font-size: 1.8rem; line-height: 2.3rem; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Animasi Kelopak Bunga Lembut -->
+    <div class="petals-container" id="petals-holder"></div>
 
     <!-- Musik Latar -->
     <audio id="bg-music" loop preload="auto">
@@ -119,7 +135,7 @@
         </div>
     </section>
 
-    <!-- HALAMAN KEDUA BARU: SURAH AR RUM AYAT 21 -->
+    <!-- HALAMAN KEDUA: SURAH AR RUM AYAT 21 -->
     <section class="section-padding text-center container" id="page-ayat">
         <div class="glass-panel mx-auto p-5" style="max-width: 850px;" data-aos="fade-up" data-aos-duration="1200">
             <i class="fas fa-heart fa-2x mb-4" style="color: #d4af37;"></i>
@@ -127,7 +143,7 @@
             
             <!-- Ayat Arab -->
             <p class="arabic-font my-4 px-3 text-center">
-                وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ Lَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+                وَمِنْ ءَايَٰtِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ Lِّقَوْمٍ يَتَفَكَّرُونَ
             </p>
             
             <hr class="mx-auto my-4" style="width: 80px; border-top: 2px solid #d4af37;">
@@ -184,7 +200,7 @@
         </div>
     </section>
 
-    <!-- 3. Kisah Cinta (Love Journey) -->
+    <!-- 3. Kisah Cinta (Love Journey Berbentuk Galeri Visual) -->
     <section class="section-padding container">
         <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
             <div class="text-center mb-5">
@@ -193,25 +209,33 @@
             </div>
             <div class="timeline">
                 <div class="timeline-container left" data-aos="fade-right">
-                    <div class="glass-panel p-3 text-start timeline-content">
+                    <div class="timeline-content">
+                        <!-- Menggunakan Foto Drive 1 -->
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1_BWBy6LvbA44jllcs7bqaLdP3-vrWuSv" class="timeline-gallery-img" alt="Pertama Bertemu">
                         <h4 class="h6 fw-bold" style="color: #d4af37;">Pertama Bertemu (2023)</h4>
                         <p class="mb-0 text-muted small">Awal mula takdir mempertemukan kami di sebuah acara. Pandangan pertama yang menjadi awal diskusi panjang dan kedekatan kami.</p>
                     </div>
                 </div>
                 <div class="timeline-container right" data-aos="fade-left">
-                    <div class="glass-panel p-3 text-start timeline-content">
+                    <div class="timeline-content">
+                        <!-- Menggunakan Foto Drive 2 -->
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="timeline-gallery-img" alt="Menjalin Komitmen">
                         <h4 class="h6 fw-bold" style="color: #d4af37;">Menjalin Komitmen (2024)</h4>
                         <p class="mb-0 text-muted small">Setelah saling mengenal lebih dalam, kami memutuskan untuk berkomitmen serius dan saling mendukung impian satu sama lain.</p>
                     </div>
                 </div>
                 <div class="timeline-container left" data-aos="fade-right">
-                    <div class="glass-panel p-3 text-start timeline-content">
+                    <div class="timeline-content">
+                        <!-- Menggunakan Foto Drive 3 -->
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1iNdTKBzkdgmp7VJD64SkSFduQyZWP_Hs" class="timeline-gallery-img" alt="Hari Lamaran">
                         <h4 class="h6 fw-bold" style="color: #d4af37;">Hari Lamaran (Early 2026)</h4>
                         <p class="mb-0 text-muted small">Di hadapan kedua keluarga besar, kami mengikat janji suci secara resmi dalam acara lamaran penuh haru dan bahagia.</p>
                     </div>
                 </div>
                 <div class="timeline-container right" data-aos="fade-left">
-                    <div class="glass-panel p-3 text-start timeline-content">
+                    <div class="timeline-content">
+                        <!-- Menggunakan Foto Drive 2 -->
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="timeline-gallery-img" alt="Menikah">
                         <h4 class="h6 fw-bold" style="color: #d4af37;">Menikah (Desember 2026)</h4>
                         <p class="mb-0 text-muted small">Hari baru dan lembaran baru kehidupan kami dimulai. Kami mengikrarkan janji setia seumur hidup dalam ikatan pernikahan.</p>
                     </div>
@@ -243,6 +267,14 @@
                         <p class="text-muted small">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- FITUR TOMBOL SIMPAN TANGGAL (ADD TO CALENDAR) -->
+            <div class="mt-4" data-aos="fade-up">
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ruslan+%26+Nuraeni&dates=20261226T010000Z/20261226T070000Z&details=Selamat+datang+di+pernikahan+Ruslan+and+Nuraeni.+Mohon+doa+restu+Anda.&location=Klinik+Aqma+Purwakarta,+Jawa+Barat" 
+                   target="_blank" class="btn btn-custom">
+                    <i class="fas fa-calendar-plus me-2"></i>Simpan Tanggal (Add to Calendar)
+                </a>
             </div>
             
             <div class="mt-5 shadow-sm rounded overflow-hidden mx-auto border" style="max-width: 850px;" data-aos="fade-up">
@@ -316,10 +348,31 @@
             once: true
         });
 
+        // Logika Render Animasi Kelopak Bunga Jatuh secara acak
+        const holder = document.getElementById('petals-holder');
+        const petalCount = 25;
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            
+            // Variasi ukuran, posisi awal, kecepatan, dan warna kelopak bunga
+            const size = Math.random() * 8 + 8; 
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDelay = Math.random() * 8 + 's';
+            petal.style.animationDuration = Math.random() * 6 + 6 + 's';
+            
+            // Variasi warna pink kelopak bunga agar alami
+            const colors = ['#f8c8d8', '#f3b0c3', '#ffdde1'];
+            petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            holder.appendChild(petal);
+        }
+
         const music = document.getElementById('bg-music');
         const icon = document.getElementById('music-icon');
 
-        // Modifikasi fungsi agar scroll meluncur pas di halaman Ayat Ar-Rum
         function startInvitation() {
             const targetPage = document.getElementById('page-ayat');
             targetPage.scrollIntoView({ behavior: 'smooth' });
